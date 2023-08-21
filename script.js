@@ -310,7 +310,7 @@ scene("game", () => {
 
 
   // define gravity
-  setGravity(1600);
+  setGravity(1000);
   // ===============================================================
   let currentFrame = 0;
 
@@ -394,9 +394,11 @@ scene("game", () => {
     const obstacle = choose(["barrier", "cactus", "cactusone", "circle", "coin", "col", "crab", "dinosaur", "venus", "flower", "flowera", "heart", "hedge", "hedgepix", "horsea", "olive", "plate", "scale", "statue", "torch", "tree", "treea", "vase", "vasea", "vaseb", "vasec", "vased", "vasee", "venus", "wave"]);
     
     // add tree obj
+    const scaleIncrement = rand(3) * 0.1
+  
     add([
       sprite(obstacle),
-      scale(0.3),
+      scale(0.2 + scaleIncrement),
       area(),
       outline(4),
       pos(width(), height() - FLOOR_HEIGHT),
